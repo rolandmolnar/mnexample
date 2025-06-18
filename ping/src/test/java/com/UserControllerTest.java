@@ -12,16 +12,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest
-public class PingControllerTest {
+public class UserControllerTest {
     @Inject
     @Client("/")
     HttpClient client;
 
     @Test
-    void testPing() {
-        HttpRequest<?> request = HttpRequest.GET("/ping");
+    void testUser() {
+        HttpRequest<?> request = HttpRequest.GET("/user");
         String body = client.toBlocking().retrieve(request);
         assertNotNull(body);
-        assertEquals("OK", body);
+        assertEquals("John Doe", body);
     }
 }
