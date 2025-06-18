@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.repository.UserRepository;
+import com.repository.IUserRepository;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import jakarta.inject.Inject;
@@ -9,7 +9,7 @@ import jakarta.inject.Inject;
 public class UserController {
 
     @Inject
-    private UserRepository userRepository;
+    private IUserRepository userRepository;
 
     @Get("/")
     public String ping() {
